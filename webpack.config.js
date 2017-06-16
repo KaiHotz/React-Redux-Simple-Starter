@@ -1,29 +1,48 @@
+var webpack = require('webpack');
+var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const VENDOR_LIBS = [
+    "axios",
+    "lodash",
+    "react",
+    "react-dom",
+    "react-redux",
+    "react-router-dom",
+    "redux"
+];
+
 module.exports = {
-  entry: [
-    './src/index.js'
-  ],
+  entry: {
+    bundle: './src/index.js',
+    vendor: VENDOR_LIBS
+  },
   output: {
-    path: __dirname,
-    publicPath: '/',
-    filename: 'bundle.js'
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].[chunkhash].js'
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        exclude: [/node_modules/],
-        use: [{
-          loader: 'babel-loader',
-          options: { presets: ['react', 'es2015', 'stage-1'] },
-        }],
+        use: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(scss|sass|css)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
-  resolve: {
-    extensions: ['.js', '.jsx']
-  },
-  devServer: {
-    historyApiFallback: true,
-    contentBase: './'
-  }
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor', 'manifest']
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    })
+  ]
 };
