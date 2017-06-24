@@ -1,8 +1,8 @@
-###Getting Started###
+### Getting Started
 
 There are two methods for getting started with this repo.
 
-####Familiar with Git?#####
+#### Familiar with Git?
 
 ```
   > git clone git@github.com:SpecialKcl/React-Redux-Simple-Starter.git
@@ -12,7 +12,7 @@ There are two methods for getting started with this repo.
   > in your Browser open http://localhost:8080
 ```
 
-####Not Familiar with Git?#####
+#### Not Familiar with Git?
 Click [here](https://github.com/SpecialKcl/React-Redux-Simple-Starter.git) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
 
 ```
@@ -21,6 +21,6 @@ Click [here](https://github.com/SpecialKcl/React-Redux-Simple-Starter.git) then 
   > in your Browser open http://localhost:8080
 ```
 
-####To run Integration Test#####
+#### To run Test
 ```
   > npm test
