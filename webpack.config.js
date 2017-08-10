@@ -1,16 +1,16 @@
-var webpack = require('webpack');
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack')
+var path = require('path')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const VENDOR_LIBS = [
-    "axios",
-    "lodash",
-    "react",
-    "react-dom",
-    "react-redux",
-    "react-router-dom",
-    "redux"
-];
+  'axios',
+  'lodash',
+  'react',
+  'react-dom',
+  'react-redux',
+  'react-router-dom',
+  'redux'
+]
 
 module.exports = {
   entry: {
@@ -45,4 +45,4 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })
   ]
-};
+}
