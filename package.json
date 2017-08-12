@@ -4,18 +4,12 @@
   "description": "Simple starter package for Redux with React and Babel support",
   "main": "index.js",
   "repository": "https://github.com/KaiHotz/React-Redux-Simple-Starter",
-  "scripts": {
-    "clean": "rimraf dist",
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "watch": "npm run start -- --watch",
-    "test": "jest",
-    "test:watch": "npm run test -- --watch",
-    "build": "NODE_ENV=production npm run clean && webpack -p"
-  },
-  "author": "",
+  "author": "Kai Hotz",
   "license": "MIT",
   "standard": {
-    "env": [ "jest" ]
+    "env": [
+      "jest"
+    ]
   },
   "devDependencies": {
     "ajv": "^5.2.2",
@@ -45,5 +39,13 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.1.2",
     "redux": "^3.7.2"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "watch": "npm run start -- --watch",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch",
+    "build": "NODE_ENV=production npm run clean && webpack -p"
   }
 }
