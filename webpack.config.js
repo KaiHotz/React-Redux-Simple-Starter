@@ -4,7 +4,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const VENDOR_LIBS = [
   'axios',
-  'lodash',
   'react',
   'react-dom',
   'react-redux',
