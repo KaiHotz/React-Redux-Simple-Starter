@@ -9,6 +9,7 @@
     "transform-class-properties",
     ["root-import", [{
       "rootPathPrefix": "@",
+      "rootPathSuffix": "src"
     }]]
   ],
   "env": {
