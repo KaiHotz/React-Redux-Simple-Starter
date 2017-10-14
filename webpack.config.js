@@ -6,6 +6,7 @@ const VENDOR_LIBS = [
   'axios',
   'react',
   'react-dom',
+  'prop-types',
   'react-redux',
   'react-router-dom',
   'redux'
@@ -16,17 +17,19 @@ module.exports = {
     bundle: './src/index.js',
     vendor: VENDOR_LIBS
   },
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].[hash].js'
+  },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     hot: true,
     inline: true,
-    port: 8080,
-    historyApiFallback: true
-  },
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].[hash].js'
+    port: 3000,
+    historyApiFallback: true,
+    compress: true,
+    open: true
   },
   module: {
     rules: [
