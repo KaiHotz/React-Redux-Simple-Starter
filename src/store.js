@@ -13,7 +13,10 @@ const configureStore = (initialState = {}) => {
     // Enable webpack hot module replacement for reducers
     module.hot.accept(
       './reducers',
-      () => store.replaceReducer(rootReducer)
+      () => {
+        const rootReducer = require('./reducers').default
+        store.replaceReducer(rootReducer)
+      }
     )
   }
 
