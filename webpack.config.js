@@ -18,8 +18,11 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
-    hot: true
+    contentBase: path.join(__dirname, 'dist'),
+    hot: true,
+    inline: true,
+    port: 8080,
+    historyApiFallback: true
   },
   output: {
     path: path.join(__dirname, 'dist'),

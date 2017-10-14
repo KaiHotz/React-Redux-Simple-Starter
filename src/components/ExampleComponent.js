@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import '../styles/styles.css'
 
-class App extends Component {
+class ExampleComponent extends Component {
   render () {
     return (
       <div>
@@ -11,4 +10,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default ExampleComponent
