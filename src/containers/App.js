@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { compose } from 'recompose'
+import WithErrors from '@/src/hocs/WithErrors'
 import ExampleComponent from '@/src/components/ExampleComponent'
 
 import '@/styles/styles.scss'
@@ -18,4 +20,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, null)(App)
+export default compose(
+  WithErrors,
+  connect(mapStateToProps, null)
+)(App)
