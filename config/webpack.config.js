@@ -14,16 +14,16 @@ const VENDOR_LIBS = [
 
 module.exports = {
   entry: {
-    bundle: './src/index.js',
+    bundle: ['babel-polyfill', './src/index.js'],
     vendor: VENDOR_LIBS
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '../build'),
     filename: '[name].[hash].js'
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'src'),
+    contentBase: path.join(__dirname, '../src'),
     hot: true,
     inline: true,
     port: 3000,
@@ -43,7 +43,7 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|svg)$/,
         use: ['file-loader']
       }
     ]
