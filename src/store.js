@@ -1,12 +1,12 @@
 import { compose, createStore, applyMiddleware } from 'redux'
-import reduxThunk from 'redux-thunk'
+import promise from 'redux-promise'
 import rootReducer from './reducers'
 
 const configureStore = (initialState = {}) => {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
   const store = createStore(rootReducer, composeEnhancers(
-    applyMiddleware(reduxThunk)
+    applyMiddleware(promise)
   ))
 
   if (module.hot) {

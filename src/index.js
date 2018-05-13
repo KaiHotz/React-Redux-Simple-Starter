@@ -1,15 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
+import { Router } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
 import configureStore from './store'
-import App from './containers/App'
+import App from './App'
 
+const history = createBrowserHistory()
 const store = configureStore()
 
 const render = Component => {
   ReactDOM.render(
     <Provider store={store}>
-      <Component />
+      <Router history={history}>
+        <Component />
+      </Router>
     </Provider>
     , document.querySelector('.container')
   )
@@ -18,8 +23,8 @@ const render = Component => {
 render(App)
 
 if (module.hot) {
-  module.hot.accept('./containers/App', () => {
-    const App = require('./containers/App').default
+  module.hot.accept('./App', () => {
+    const App = require('./App').default
     render(App)
   })
 }

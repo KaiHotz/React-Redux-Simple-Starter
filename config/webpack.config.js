@@ -19,6 +19,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '../build'),
+    chunkFilename: '[name].[hash].js',
     filename: '[name].[hash].js'
   },
   devtool: 'inline-source-map',
