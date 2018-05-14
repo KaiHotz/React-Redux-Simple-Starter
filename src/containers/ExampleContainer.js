@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { compose } from 'recompose'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { fetchSinglePost } from '@/src/actions'
+import { fetchSinglePost } from '@/actions'
 
 class ExampleContainer extends Component {
   static propTypes = {
