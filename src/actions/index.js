@@ -1,22 +1,52 @@
 import axios from 'axios'
-
-export const FETCH_POSTS = 'FETCH_POSTS'
-export const FETCH_SINGLE_POST = 'FETCH_SINGLE_POST'
+import { ITEM } from './types'
 
 const ROOT_URL = 'https://jsonplaceholder.typicode.com'
 
-export const fetchPosts = () => {
+export const request = () => {
   const request = axios.get(`${ROOT_URL}/posts`)
   return {
-    type: FETCH_POSTS,
+    type: ITEM.GET,
     payload: request
   }
 }
 
-export const fetchSinglePost = id => {
+export const requestOne = id => {
   const request = axios.get(`${ROOT_URL}/posts/${id}`)
   return {
-    type: FETCH_SINGLE_POST,
+    type: ITEM.GET_ONE,
+    payload: request
+  }
+}
+
+export const save = (id, saveData) => {
+  const request = axios.post(`${ROOT_URL}/posts/${id}`, { saveData })
+  return {
+    type: ITEM.SAVE,
+    payload: request
+  }
+}
+
+export const replace = (id, replaceData) => {
+  const request = axios.put(`${ROOT_URL}/posts/${id}`, { replaceData })
+  return {
+    type: ITEM.PUT,
+    payload: request
+  }
+}
+
+export const update = (id, updateData) => {
+  const request = axios.patch(`${ROOT_URL}/posts/${id}`, { updateData })
+  return {
+    type: ITEM.PATCH,
+    payload: request
+  }
+}
+
+export const deleteOne = id => {
+  const request = axios.delete(`${ROOT_URL}/posts/${id}`)
+  return {
+    type: ITEM.DELETE,
     payload: request
   }
 }

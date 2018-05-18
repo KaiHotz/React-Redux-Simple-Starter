@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import { compose } from 'recompose'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { fetchSinglePost } from '@/actions'
+import { requestOne } from '@/actions'
 
 class ExampleContainer extends Component {
   static propTypes = {
     posts: PropTypes.object,
-    fetchSinglePost: PropTypes.func.isRequired
+    requestOne: PropTypes.func.isRequired
   }
 
   static defaultProps = {
@@ -16,7 +16,7 @@ class ExampleContainer extends Component {
   }
 
   componentDidMount () {
-    this.props.fetchSinglePost('1')
+    this.props.requestOne('1')
   }
 
   render () {
@@ -56,5 +56,5 @@ const mapStateToProps = ({ posts }) => {
 }
 
 export default compose(
-  connect(mapStateToProps, { fetchSinglePost })
+  connect(mapStateToProps, { requestOne })
 )(ExampleContainer)

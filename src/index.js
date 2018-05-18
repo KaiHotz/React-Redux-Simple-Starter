@@ -6,6 +6,7 @@ import { Router } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import configureStore from './store'
 import App from './App'
+import '@/styles/styles.scss'
 
 const history = createBrowserHistory()
 const store = configureStore()
