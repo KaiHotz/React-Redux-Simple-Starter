@@ -8,38 +8,39 @@ import { requestOne } from '@/actions'
 class ExampleContainer extends Component {
   static propTypes = {
     posts: PropTypes.object,
-    requestOne: PropTypes.func.isRequired
+    requestOne: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
-    posts: {}
+    posts: {},
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.props.requestOne('1')
   }
 
-  render () {
+  render() {
     const { posts } = this.props
+
     return (
       <div>
         <h1>Example Container</h1>
         <br />
-        <div className='row'>
-          <div className='card'>
-            <h4 className='card-header'>
+        <div className="row">
+          <div className="card">
+            <h4 className="card-header">
               Example Data:
             </h4>
-            <div className='card-body'>
-              <h4 className='card-title'>
+            <div className="card-body">
+              <h4 className="card-title">
                 {posts.title}
               </h4>
-              <p className='card-text'>
+              <p className="card-text">
                 {posts.body}
               </p>
               <Link
-                to='/exampleComponent'
-                className='btn btn-warning'
+                to="/exampleComponent"
+                className="btn btn-warning"
               >
                 Link to Example Component
               </Link>
@@ -51,10 +52,6 @@ class ExampleContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ posts }) => {
-  return { posts }
-}
+const mapStateToProps = ({ posts }) => ({ posts })
 
-export default compose(
-  connect(mapStateToProps, { requestOne })
-)(ExampleContainer)
+export default compose(connect(mapStateToProps, { requestOne }))(ExampleContainer)

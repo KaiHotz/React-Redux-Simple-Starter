@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
+import '@/styles/styles.scss'
 import configureStore from './store'
 import App from './App'
-import '@/styles/styles.scss'
 
 const history = createBrowserHistory()
 const store = configureStore()
@@ -18,7 +18,7 @@ const render = Component => {
         <Component />
       </Router>
     </Provider>
-    , document.querySelector('.container')
+    , document.querySelector('.container'),
   )
 }
 

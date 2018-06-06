@@ -8,5 +8,7 @@ export const ITEM = createActionTypes('ITEM', [
   'PATCH',
   'DELETE',
   'SUCCESS',
-  'FAILURE'
+  'FAILURE',
 ])
+
+export default ITEM
