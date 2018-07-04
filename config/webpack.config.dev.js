@@ -2,20 +2,9 @@ const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const VENDOR_LIBS = [
-  'axios',
-  'react',
-  'react-dom',
-  'prop-types',
-  'react-redux',
-  'react-router-dom',
-  'redux',
-]
-
 module.exports = {
   entry: {
     bundle: ['babel-polyfill', './src/index.jsx'],
-    vendor: VENDOR_LIBS,
   },
   output: {
     path: path.join(__dirname, '../build'),
