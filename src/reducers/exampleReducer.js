@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import { ITEM } from '@/actions/types'
+import { ITEM } from '../actions/types'
 
 export default function (state = {}, action) {
   switch (action.type) {

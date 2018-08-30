@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { compose } from 'recompose'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { requestOne } from '@/actions'
+import { requestOne } from '../actions'
 
 class ExampleContainer extends Component {
   static propTypes = {
@@ -16,7 +16,8 @@ class ExampleContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.requestOne('1')
+    const { requestOne } = this.props
+    requestOne('1')
   }
 
   render() {

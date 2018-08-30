@@ -1,4 +1,4 @@
-import { createActionTypes } from '@/utils'
+import { createActionTypes } from '../utils'
 
 export const ITEM = createActionTypes('ITEM', [
   'GET',
