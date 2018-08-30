@@ -2,6 +2,8 @@ const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const protocol = process.env.HTTPS === 'true' ? 'https' : 'http'
+
 module.exports = {
   entry: {
     bundle: ['@babel/polyfill', './src/index.jsx'],
@@ -13,13 +15,18 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, '../src'),
+    contentBase: path.resolve(__dirname, '../src'),
     hot: true,
     inline: true,
     port: 3000,
-    historyApiFallback: true,
     compress: true,
     open: true,
+    quiet: true,
+    https: protocol === 'https',
+    overlay: false,
+    historyApiFallback: {
+      disableDotRule: true,
+    },
   },
   module: {
     rules: [
