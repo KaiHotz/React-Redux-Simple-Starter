@@ -3,7 +3,13 @@ import promise from 'redux-promise'
 import rootReducer from './reducers'
 
 const configureStore = () => {
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+  const composeEnhancers = process.env.NODE_ENV !== 'production'
+    && typeof window === 'object'
+    && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+      shouldHotReload: false,
+    })
+    : compose
 
   const store = createStore(rootReducer, composeEnhancers(applyMiddleware(promise)))
 
