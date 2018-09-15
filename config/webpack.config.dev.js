@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const DashboardPlugin = require('webpack-dashboard/plugin')
 
 const protocol = process.env.HTTPS === 'true' ? 'https' : 'http'
 
@@ -21,7 +22,6 @@ module.exports = {
     port: 3000,
     compress: true,
     open: true,
-    quiet: true,
     https: protocol === 'https',
     overlay: false,
     historyApiFallback: {
@@ -75,6 +75,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
     }),
+    new DashboardPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
   ],
