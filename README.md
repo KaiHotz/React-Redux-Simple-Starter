@@ -1,16 +1,17 @@
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
 ## This is a Boilerplate Project for getting started with React and Redux:
 
-- React
 - Redux
 - Axios
 - WebPack
 - Recompose
 - Redux-Promise
 - React-Router
+- ESLint
+- ESLint config AirBnB
 
-All done with custom WebPack config., HMR (Hot Module Replacement) enabled, Babel preset ENV and Babel root import.
-
-StandardJs is used for Linting and Code Formating
 
 ### Getting Started
 
@@ -21,8 +22,8 @@ There are two methods for getting started with this repo.
 ```
   > git clone git@github.com:KaiHotz/React-Redux-Simple-Starter.git
   > cd React-Redux-Simple-Starter
-  > npm install
-  > npm start
+  > yarn install
+  > yarn start
   > in your Browser open http://localhost:3000
 ```
 
@@ -30,8 +31,8 @@ There are two methods for getting started with this repo.
 Click [here](https://github.com/KaiHotz/React-Redux-Simple-Starter/archive/master.zip) to download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
 
 ```
-  > npm install
-  > npm start
+  > yarn install
+  > yarn start
   > in your Browser open http://localhost:3000
 ```
 
@@ -44,10 +45,5 @@ Click [here](https://github.com/KaiHotz/React-Redux-Simple-Starter/archive/maste
 
 ### To run Tests
 ```
-  > npm run test
-```
-
-### To run Tests with coverage
-```
-  > npm run test:coverage
+  > yarn test
 ```
