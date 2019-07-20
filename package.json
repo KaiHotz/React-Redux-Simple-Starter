@@ -1,7 +1,11 @@
 {
   "name": "react-redux-simple-starter",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Simple starter package for Redux with React and Babel support",
+  "main": "index.js",
+  "repository": "https://github.com/KaiHotz/React-Redux-Simple-Starter",
+  "author": "Kai Hotz",
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
