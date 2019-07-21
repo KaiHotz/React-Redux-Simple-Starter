@@ -9,9 +9,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Recompose
 - Redux-Promise
 - React-Router
-- ESLint
-- ESLint config AirBnB
-
 
 ### Getting Started
 
