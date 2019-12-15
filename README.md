@@ -19,8 +19,8 @@ There are two methods for getting started with this repo.
 ```
   > git clone git@github.com:KaiHotz/React-Redux-Simple-Starter.git
   > cd React-Redux-Simple-Starter
-  > npm install
-  > npm start
+  > yarn install
+  > yarn start
   > in your Browser open http://localhost:3000
 ```
 
@@ -28,8 +28,8 @@ There are two methods for getting started with this repo.
 Click [here](https://github.com/KaiHotz/React-Redux-Simple-Starter/archive/master.zip) to download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
 
 ```
-  > npm install
-  > npm start
+  > yarn install
+  > yarn start
   > in your Browser open http://localhost:3000
 ```
 
@@ -42,5 +42,5 @@ Click [here](https://github.com/KaiHotz/React-Redux-Simple-Starter/archive/maste
 
 ### To run Tests
 ```
-  > npm run test
+  > yarn test
 ```
