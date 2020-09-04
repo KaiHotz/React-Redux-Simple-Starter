@@ -48,7 +48,7 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "jasmine-expect": "^4.0.3",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "react-test-renderer": "^16.12.0",
     "typescript": "^3.7.3"
   }
