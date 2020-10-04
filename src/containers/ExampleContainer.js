@@ -1,7 +1,6 @@
 import React, { Component, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
-import { compose } from 'recompose'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { requestOne } from '../actions'
@@ -52,4 +51,4 @@ ExampleContainer.defaultProps = {
 
 const mapStateToProps = ({ posts }) => ({ posts })
 
-export default compose(connect(mapStateToProps, { requestOne }))(ExampleContainer)
+export default connect(mapStateToProps, { requestOne })(ExampleContainer)
