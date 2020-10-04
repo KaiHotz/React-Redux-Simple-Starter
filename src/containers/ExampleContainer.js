@@ -1,29 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 import PropTypes from 'prop-types'
+import { useDispatch } from 'react-redux'
 import { compose } from 'recompose'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { requestOne } from '../actions'
 
-class ExampleContainer extends Component {
-  static propTypes = {
-    posts: PropTypes.object,
-    requestOne: PropTypes.func.isRequired,
-  }
+export const ExampleContainer = ({ posts }) => {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(requestOne('1'))
+  }, [dispatch])
 
-  static defaultProps = {
-    posts: {},
-  }
-
-  componentDidMount() {
-    const { requestOne } = this.props
-    requestOne('1')
-  }
-
-  render() {
-    const { posts } = this.props
-
-    return (
+  return (
       <div>
         <h1>Example Container</h1>
         <br />
@@ -31,7 +20,7 @@ class ExampleContainer extends Component {
           <div className="card">
             <h4 className="card-header">
               Example Data:
-            </h4>
+              </h4>
             <div className="card-body">
               <h4 className="card-title">
                 {posts.title}
@@ -50,7 +39,15 @@ class ExampleContainer extends Component {
         </div>
       </div>
     )
-  }
+}
+
+ExampleContainer.propTypes = {
+  posts: PropTypes.object,
+  requestOne: PropTypes.func.isRequired,
+}
+
+ExampleContainer.defaultProps = {
+  posts: {},
 }
 
 const mapStateToProps = ({ posts }) => ({ posts })
